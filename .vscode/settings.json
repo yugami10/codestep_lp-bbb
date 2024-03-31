@@ -8,4 +8,8 @@
             "savePath": "/css",
         },
     ],
+
+    "files.autoSave": "afterDelay",
+    "editor.tabSize": 4,
+    "editor.renderWhitespace": "none",
 }
