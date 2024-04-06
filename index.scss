@@ -12,7 +12,7 @@ img {
 }
 
 .header {
-    padding: 50px 40px 0px;
+    padding: 40px 40px 0px;
 
     &__logo {
         max-width: 100px;
@@ -133,4 +133,48 @@ img {
     height: 100vh;
     background-color: #ff2a2a;
     transition: .5s ease;
+}
+
+.main_img {
+    ul {
+        position: relative;
+
+        li {
+            position: absolute;
+            width: 70%;
+            right: 0;
+            animation: changeImage 12s infinite;
+            opacity: 0;
+            height: 720px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                box-shadow: inset 0px 0px 20px 20px #FFFFFF;
+            }
+
+            &:nth-child(0) {
+                animation-delay: 0s;
+            }
+            &:nth-child(1) {
+                animation-delay: 4s;
+            }
+            &:nth-child(2) {
+                animation-delay: 8s;
+            }
+
+            img {
+                height: 100%;
+            }
+        }
+    }
+}
+
+@keyframes changeImage {
+    0% { opacity: 0; }
+    15% { opacity: 1; }
+    35% { opacity: 1; }
+    45% { opacity: 0; }
+    100% { opacity: 0; }
 }
