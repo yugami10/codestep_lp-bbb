@@ -343,3 +343,112 @@ img {
         opacity: 1;
     }
 }
+
+.voice {
+    margin-top: 120px;
+
+    &__title {
+        @include title;
+    }
+
+    &__message_area {
+        max-width: 860px;
+        margin: 0 auto;
+        margin-top: 110px;
+    }
+
+    &__message_left {
+        display: flex;
+        opacity: 0;
+
+        .voice__message_text_area {
+            width: 514px;
+            margin-left: 25px;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 70px;
+                left: -15px;
+                width: calc(30px / 2);
+                height: 30px;
+                clip-path: polygon(0 50%, 100% 0, 100% 100%);
+                background-color: #E9F1FB;
+            }
+        }
+
+        &:not(:first-child) {
+            margin-top: 60px;
+        }
+
+        &.balloon {
+            animation: balloon .5s ease-out 0s 1 forwards;
+        }
+    }
+
+    &__message_right {
+        display: flex;
+        justify-content: right;
+        opacity: 0;
+        margin-top: 60px;
+
+        .voice__message_text_area {
+            width: 514px;
+            margin-right: 25px;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 70px;
+                right: -15px;
+                width: calc(30px / 2);
+                height: 30px;
+                clip-path: polygon(0 0, 100% 50%, 0 100%);
+                background-color: #E9F1FB;
+            }
+        }
+
+        &.balloon {
+            animation: balloon .5s ease-out 0s 1 forwards;
+        }
+    }
+
+    &__self_information {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 12px;
+
+        img {
+            width: 120px;
+            background-color: #ccc;
+            border-radius: 50%;
+        }
+
+        p {
+            padding-top: 9px;
+            line-height: 1.5;
+        }
+    }
+
+
+
+    &__message_text {
+        background-color: #E9F1FB;
+        border-radius: 15px;
+        padding: 22px;
+    }
+}
+
+@keyframes balloon {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

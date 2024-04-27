@@ -17,18 +17,30 @@ const clickHambarger = () => {
     switchHambargerMenu()
 }
 
-const scrollEvents = () => {
-    const reason__left_item = document.querySelector('.reason__left_item')
-    const online_item_position = reason__left_item.getBoundingClientRect()
-    if (online_item_position.top < window.innerHeight) {
-        reason__left_item.classList.add('slide-left')
-    }
+/**
+ * 画面内に指定の要素が表示されたら、クラスを付与
+ * @param {*} element_name
+ * @param {*} add_class_name
+ */
+const addClassWhenSelfPos = (element_name, add_class_name) => {
+    const elements = document.querySelectorAll(element_name)
 
-    const reason__right_item = document.querySelector('.reason__right_item')
-    const teacher_item_position = reason__right_item.getBoundingClientRect()
-    if (teacher_item_position.top < window.innerHeight) {
-        reason__right_item.classList.add('slide-right')
+    for (const element of elements) {
+        const pos = element.getBoundingClientRect()
+        if (pos.top < window.innerHeight) {
+            element.classList.add(add_class_name)
+        }
     }
+}
+
+/**
+ * スクロールイベント時の処理
+ */
+const scrollEvents = () => {
+    addClassWhenSelfPos('.reason__left_item', 'slide-left')
+    addClassWhenSelfPos('.reason__right_item', 'slide-right')
+    addClassWhenSelfPos('.voice__message_left', 'balloon')
+    addClassWhenSelfPos('.voice__message_right', 'balloon')
 }
 
 /**
