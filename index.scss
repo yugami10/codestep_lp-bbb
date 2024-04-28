@@ -512,7 +512,7 @@ img {
 }
 
 .entry {
-    margin-top: 125px;
+    padding: 125px 0 120px;
 
     &__wrapper {
         max-width: 860px;
@@ -547,5 +547,40 @@ img {
             color: #ff2a2a;
             border: solid 3px #ff2a2a;
         }
+    }
+}
+
+.footer {
+    padding: 60px 0 20px;
+    background-color: #E8E8E8;
+
+    &__wrapper {
+        max-width: 860px;
+        margin: 0 auto;
+    }
+
+    &__menu_list {
+        display: flex;
+    }
+
+    &__menu_item {
+        width: calc(860px / 4);
+    }
+
+    &__menu_title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    &__menu_detail_list {
+        padding: 15px;
+        li:not(:first-child) {
+            margin-top: 8px;
+        }
+    }
+
+    &__copy_ritht {
+        margin-top: 65px;
+        text-align: center;
     }
 }
