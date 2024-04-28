@@ -126,6 +126,7 @@ img {
         padding: 15px 0;
         border: solid 1px #FFFFFF;
         position: relative;
+        transition: .5s;
 
         &::after {
             content: '';
@@ -138,6 +139,11 @@ img {
 
             border-right: solid 1px #FFFFFF;
             border-bottom: solid 1px #FFFFFF;
+        }
+
+        &:hover {
+            background-color: #FFFFFF;
+            color: #ff2a2a;
         }
     }
 }
