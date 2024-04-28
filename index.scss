@@ -510,3 +510,42 @@ img {
         background-position: -700px 700px;
     }
 }
+
+.entry {
+    margin-top: 125px;
+
+    &__wrapper {
+        max-width: 860px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__explain {
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    &__sub_explain {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    &__free_order {
+        display: block;
+        margin-top: 40px;
+        padding: 20px 290px;
+        background-color: #FF2A2A;
+        color: #ffffff;
+        font-size: 28px;
+        font-weight: bold;
+        border: solid 3px #ff2a2a;
+        border-radius: 40px;
+        transition: .3s;
+
+        &:hover {
+            background-color: #ffffff;
+            color: #ff2a2a;
+            border: solid 3px #ff2a2a;
+        }
+    }
+}
