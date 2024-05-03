@@ -16,6 +16,9 @@ $breakpoint: (
     font-size: 36px;
     font-weight: bold;
     position: relative;
+    @include mq(sp) {
+        font-size: 28px;
+    }
 
     &:after {
         content: '';
@@ -26,6 +29,9 @@ $breakpoint: (
         margin: 0 auto;
         width: 100px;
         border-bottom: solid #333333 3px;
+        @include mq(sp) {
+            width: 80px;
+        }
     }
 }
 
@@ -405,6 +411,9 @@ img {
 
 .voice {
     margin-top: 120px;
+    @include mq(sp) {
+        margin-top: 80px;
+    }
 
     &__title {
         @include title;
@@ -414,31 +423,53 @@ img {
         max-width: 860px;
         margin: 0 auto;
         margin-top: 110px;
+        @include mq(sp) {
+            margin-top: 65px;
+        }
     }
 
     &__message_left {
         display: flex;
         opacity: 0;
+        @include mq(sp) {
+            flex-direction: column-reverse;
+        }
 
         .voice__message_text_area {
             width: 514px;
             margin-left: 25px;
             position: relative;
 
+            @include mq(sp) {
+                width: initial;
+                margin: 0;
+            }
+
             &::before {
                 content: '';
                 position: absolute;
                 top: 70px;
                 left: -15px;
-                width: calc(30px / 2);
-                height: 30px;
+                width: 30px;
+                height: calc(30px / 2);
                 clip-path: polygon(0 50%, 100% 0, 100% 100%);
                 background-color: #E9F1FB;
+                @include mq(sp) {
+                    clip-path: polygon(50% 100%, 0 0, 100% 0);
+                    top: initial;
+                    bottom: -15px;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                }
             }
         }
 
         &:not(:first-child) {
             margin-top: 60px;
+            @include mq(sp) {
+                margin-top: 43px;
+            }
         }
 
         &.balloon {
@@ -451,11 +482,19 @@ img {
         justify-content: right;
         opacity: 0;
         margin-top: 60px;
+        @include mq(sp) {
+            flex-direction: column;
+            margin-top: 43px;
+        }
 
         .voice__message_text_area {
             width: 514px;
             margin-right: 25px;
             position: relative;
+            @include mq(sp) {
+                width: initial;
+                margin: 0;
+            }
 
             &::before {
                 content: '';
@@ -466,6 +505,16 @@ img {
                 height: 30px;
                 clip-path: polygon(0 0, 100% 50%, 0 100%);
                 background-color: #E9F1FB;
+                @include mq(sp) {
+                    clip-path: polygon(50% 100%, 0 0, 100% 0);
+                    margin: 0 auto;
+                    top: initial;
+                    right: 0;
+                    left: 0;
+                    bottom: -15px;
+                    width: 30px;
+                    height: calc(30px / 2);
+                }
             }
         }
 
@@ -480,10 +529,17 @@ img {
         text-align: center;
         font-size: 12px;
 
+        @include mq(sp) {
+            margin-top: 30px;
+        }
+
         img {
             width: 120px;
             background-color: #ccc;
             border-radius: 50%;
+            @include mq(sp) {
+                margin: auto;
+            }
         }
 
         p {
@@ -492,12 +548,13 @@ img {
         }
     }
 
-
-
     &__message_text {
         background-color: #E9F1FB;
         border-radius: 15px;
         padding: 22px;
+        @include mq(sp) {
+            text-align: center;
+        }
     }
 }
 
@@ -518,6 +575,9 @@ img {
     background-image: url('../img/bg.gif');
     background-repeat: repeat repeat;
     animation: bg-slide 10s linear infinite;
+    @include mq(sp) {
+        margin-top: 83px;
+    }
 
     &__wrapper {
         margin: 0 auto;
@@ -533,6 +593,11 @@ img {
         justify-content: space-between;
         row-gap: 60px;
         margin-top: 105px;
+        @include mq(sp) {
+            flex-direction: column;
+            margin-top: 65px;
+            row-gap: 30px;
+        }
     }
 
     &__item {
@@ -540,6 +605,10 @@ img {
         background-color: #FFFFFF;
         border-radius: 20px;
         padding: 60px;
+        @include mq(sp) {
+            width: initial;
+            padding: 30px;
+        }
     }
 
     &__item_title {
@@ -600,6 +669,10 @@ img {
         border: solid 3px #ff2a2a;
         border-radius: 40px;
         transition: .3s;
+        @include mq(sp) {
+            margin: 40px auto 0;
+            padding: 20px 0;
+        }
 
         &:hover {
             background-color: #ffffff;
@@ -620,10 +693,17 @@ img {
 
     &__menu_list {
         display: flex;
+        @include mq(sp) {
+            flex-wrap: wrap;
+            row-gap: 30px;
+        }
     }
 
     &__menu_item {
         width: calc(860px / 4);
+        @include mq(sp) {
+            width: 50%;
+        }
     }
 
     &__menu_title {
