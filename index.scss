@@ -60,11 +60,6 @@ img {
 }
 
 .hambarger-open {
-    .header {
-        &__logo {
-            display: none;
-        }
-    }
     .hambarger_icon {
         z-index: 30;
         &__line {
@@ -105,12 +100,20 @@ img {
     justify-content: space-between;
     padding: 35px 25px;
     z-index: 1;
+    @include mq(sp) {
+        width: 75px;
+        height: 75px;
+        padding: 25px 20px;
+    }
 
     &__line {
         background-color: #FFFFFF;
         width: 50px;
         height: 2px;
         transition: .5s ease;
+        @include mq(sp) {
+            width: 35px;
+        }
     }
 }
 
@@ -129,7 +132,7 @@ img {
 
     &__logo_area {
         position: absolute;
-        margin: 50px 40px 0px;
+        margin: 40px 40px 0px;
         max-width: 100px;
     }
 
@@ -187,6 +190,7 @@ img {
     position: relative;
     @include mq(sp) {
         height: initial;
+        margin-top: 15px;
     }
 
     &__change_list {
@@ -268,6 +272,7 @@ img {
         @include mq(sp) {
             width: 100%;
             margin: 0;
+            padding: 19px 0;
         }
 
         &:hover {
@@ -383,6 +388,9 @@ img {
         &_content {
             display: block;
             font-size: 18px;
+            @include mq(sp) {
+                margin-top: 6px;
+            }
         }
     }
 }
@@ -425,6 +433,7 @@ img {
         margin-top: 110px;
         @include mq(sp) {
             margin-top: 65px;
+            padding: 0 16px;
         }
     }
 
@@ -553,7 +562,8 @@ img {
         border-radius: 15px;
         padding: 22px;
         @include mq(sp) {
-            text-align: center;
+            letter-spacing: 1.6;
+            line-height: 1.5;
         }
     }
 }
@@ -608,6 +618,7 @@ img {
         @include mq(sp) {
             width: initial;
             padding: 30px;
+            margin: 0 16px;
         }
     }
 
@@ -641,21 +652,33 @@ img {
 
 .entry {
     padding: 125px 0 120px;
+    padding: 80px 0;
 
     &__wrapper {
         max-width: 860px;
         margin: 0 auto;
         text-align: center;
+        @include mq(sp) {
+            padding: 0 16px;
+        }
     }
 
     &__explain {
         font-size: 32px;
         font-weight: bold;
+        @include mq(sp) {
+            font-size: 24px;
+            line-height: 1.6;
+        }
     }
 
     &__sub_explain {
         font-size: 18px;
         margin-top: 10px;
+        @include mq(sp) {
+            font-size: 16px;
+            line-height: 1.6;
+        }
     }
 
     &__free_order {
@@ -672,6 +695,7 @@ img {
         @include mq(sp) {
             margin: 40px auto 0;
             padding: 20px 0;
+            font-size: 24px;
         }
 
         &:hover {
@@ -689,6 +713,9 @@ img {
     &__wrapper {
         max-width: 860px;
         margin: 0 auto;
+        @include mq(sp) {
+            padding: 0 16px;
+        }
     }
 
     &__menu_list {
@@ -709,10 +736,16 @@ img {
     &__menu_title {
         font-size: 16px;
         font-weight: bold;
+        @include mq(sp) {
+            font-size: 15px;
+        }
     }
 
     &__menu_detail_list {
         padding: 15px;
+        @include mq(sp) {
+            font-size: 12px;
+        }
         li:not(:first-child) {
             margin-top: 8px;
         }
